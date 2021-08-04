@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+
+{% block title %} Cakes {% endblock title %} 
+
+{% block body %}
+
+<h1 class="text-center">Select from our range of cakes </h1>
+<div class="album py-5 bg-light">
+    <div class="container">
+
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="https://source.unsplash.com/1600x600/?Mango cakes"
+              class="d-block w-100" alt="...">
+            
+            <div class="card-body">
+              <p class="card-text">Mango cakes</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a type="button" class="btn btn-sm btn-outline-secondary" href="/buy">Buy</a>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="https://source.unsplash.com/1600x600/?Chocolate cakes"
+              class="d-block w-100" alt="...">
+            <div class="card-body">
+              <p class="card-text">Chocolate cakes </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a type="button" class="btn btn-sm btn-outline-secondary" href="/buy">Buy</a>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="https://source.unsplash.com/1600x600/?pineapple cakes"
+              class="d-block w-100" alt="...">
+            <div class="card-body">
+              <p class="card-text">pineapple Cakes </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a type="button" class="btn btn-sm btn-outline-secondary" href="/buy">Buy</a>
+                </div>
+                <small class="text-muted">9 mins</small>
+            </div> 
+    </div>
+  </div>
+
+
+
+
+
+<div class="container my-2 nb-4 "  >
+    
+    <h1 >Order a cake of your choice from here!!</h1>
+
+    <form method="POST" action="/cake" >
+        {% csrf_token %}
+
+        <div class="mb-3 ">
+            <label for="name" class="form-label">Name of Birthday boy/girl</label>
+            <input type="text" class="form-control" id="name" name="name"  placeholder="Enter name here">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Contact number</label>
+            <input type="number" class="form-control" id="number" name="number" placeholder="Enter your contact number" >
+            <div id="emailHelp" class="form-text">We'll never share your number with anyone else.</div>
+        </div>
+        <div class="mb-3">
+            <label for="desc" class="form-label">Share the details for cake , flavour , size and date here  </label>
+            <textarea class="form-control" id="desc" rows="3" name="desc" ></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+{% endblock body %} 
